@@ -8,5 +8,12 @@ function readURL(input) {
         };
 
         reader.readAsDataURL(input.files[0]);
+        updateInfo("Identifying...")
+        document.getElementsByClassName('loader')[0].style.opacity = 1;
     }
+}
+
+function updateInfo(content){
+    document.getElementById('infodiv').innerHTML
+     = content ;
 }
