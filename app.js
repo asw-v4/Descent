@@ -1,4 +1,5 @@
 function readURL(input) {
+    model()
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
@@ -16,4 +17,15 @@ function readURL(input) {
 function updateInfo(content){
     document.getElementById('infodiv').innerHTML
      = content ;
+}
+
+// create a session
+const myOnnxSession = new onnx.InferenceSession();
+
+async function model() { 
+// load the ONNX model file
+console.time("Loading")
+await myOnnxSession.loadModel('./model.onnx')
+console.timeEnd("Loading")
+console.log("Loaded")
 }
