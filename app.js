@@ -22,7 +22,7 @@ function updateInfo(content){
 const myOnnxSession = new onnx.InferenceSession();
 // load the ONNX model file
 
-myOnnxSession.loadModel("./my-model.onnx").then(() => {
+myOnnxSession.loadModel("./model.onnx").then(() => {
     // generate model input
     console.log("Loaded")
     const inferenceInputs = getInputs();
