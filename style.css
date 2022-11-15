@@ -26,8 +26,8 @@ label {
 }
 
 #uploaded {
-    width: 500px;
-    height: 500px;
+    height : 500px;
+    width: auto;
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
