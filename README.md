@@ -2,4 +2,4 @@
 
 WebApp for Fish Species Identification
 
-[Click to view App]{https://asw-v4.github.io/Descent/}
+[Click to view App](https://asw-v4.github.io/Descent/)
