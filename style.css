@@ -6,28 +6,12 @@ body {
     width: 100%;
 }
 
-#camera,
-#camera--view,
-#camera--sensor,
-#camera--output {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-#camera--view,
-#camera--sensor,
-#camera--output {
-    transform: scaleX(-1);
-    filter: FlipH;
-}
-
-#camera--trigger {
+label {
     width: 200px;
     background-color: black;
     color: white;
-    font-size: 16px;
+    font-size: 32px;
+    font-family: sans-serif;
     border-radius: 30px;
     border: none;
     padding: 15px 20px;
@@ -38,13 +22,13 @@ body {
     left: calc(50% - 100px);
 }
 
-.taken {
-    height: 100px !important;
-    width: 100px !important;
-    transition: all 0.5s ease-in;
-    border: solid 3px white;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
-    top: 20px;
-    right: 20px;
-    z-index: 2;
+#uploaded {
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    display: block;
+    border: 10px solid rgb(48, 48, 48);
+    background: color rgb(48, 48, 48);
 }
