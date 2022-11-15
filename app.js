@@ -21,11 +21,17 @@ function updateInfo(content){
 
 // create a session
 const myOnnxSession = new onnx.InferenceSession();
-
-async function model() { 
 // load the ONNX model file
-console.time("Loading")
-await myOnnxSession.loadModel('./model.onnx')
-console.timeEnd("Loading")
-console.log("Loaded")
-}
+
+myOnnxSession.loadModel("./my-model.onnx").then(() => {
+    // generate model input
+    console.log("Loaded")
+    const inferenceInputs = getInputs();
+    // execute the model
+    myOnnxSession.run(inferenceInputs).then((output) => {
+      // consume the output
+      const outputTensor = output.values().next().value;
+      console.log(`model output tensor: ${outputTensor.data}.`);
+    });
+  });
+
