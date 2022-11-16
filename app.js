@@ -10,6 +10,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
         updateInfo("Identifying...")
         document.getElementsByClassName('loader')[0].style.opacity = 1;
+        predict(input.files[0])
     }
 }
 
@@ -18,11 +19,7 @@ function updateInfo(content){
      = content ;
 }
 
-// create a session
-const myOnnxSession = new onnx.InferenceSession();
-// load the ONNX model file
-
-myOnnxSession.loadModel("./model.onnx").then(() => {
+function predict(Input) {
     // generate model input
     console.log("Loaded")
     const inferenceInputs = getInputs();
@@ -32,5 +29,11 @@ myOnnxSession.loadModel("./model.onnx").then(() => {
       const outputTensor = output.values().next().value;
       console.log(`model output tensor: ${outputTensor.data}.`);
     });
-  });
+  };
+
+// create a session
+const myOnnxSession = new onnx.InferenceSession();
+// load the ONNX model file
+myOnnxSession.loadModel("./model.onnx")
+console.log('Model Loaded')
 
