@@ -21,8 +21,8 @@ function updateInfo(content){
 
 function predict(Input) {
     // generate model input
-    console.log("Loaded")
-    const inferenceInputs = getInputs();
+    console.log("RunPrediction")
+    const inferenceInputs = Input;
     // execute the model
     myOnnxSession.run(inferenceInputs).then((output) => {
       // consume the output
