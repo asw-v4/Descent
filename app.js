@@ -27,11 +27,11 @@ function readURL(input) {
         };
 
         reader.readAsDataURL(input.files[0]);
-        updateInfo("Identifying...")
-        document.getElementsByClassName('loader')[0].style.opacity = 1;
-        console.log('About to Predict')
-        predict(document.getElementById('uploaded').src)
     }
+    updateInfo("Identifying...")
+    document.getElementsByClassName('loader')[0].style.opacity = 1;
+    console.log('About to Predict')
+    predict(document.getElementById('uploaded').src)
 }
 
 
