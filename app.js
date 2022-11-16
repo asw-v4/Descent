@@ -5,14 +5,12 @@ function readURL(input) {
         reader.onload = function (e) {
             $('#uploaded')
                 .attr('src', e.target.result)
-
-            uploaded_file = e.target.result
         };
 
         reader.readAsDataURL(input.files[0]);
         updateInfo("Identifying...")
         document.getElementsByClassName('loader')[0].style.opacity = 1;
-        predict(uploaded_file[1])
+        predict(input.files[0])
     }
 }
 
