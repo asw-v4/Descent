@@ -11,7 +11,7 @@ function readURL(input) {
         updateInfo("Identifying...")
         document.getElementsByClassName('loader')[0].style.opacity = 1;
         console.log('ABbout to Predict')
-        predict(input.files[0].target.result)
+        predict('img');
     }
 }
 
