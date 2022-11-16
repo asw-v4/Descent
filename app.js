@@ -5,8 +5,8 @@ function predict() {
     input = document.getElementById('uploaded').src
     // generate model input
     console.log('Predicting')
-    console.log(input)
-    const inferenceInputs = _base64ToArrayBuffer(input);
+    input_data = new onnx.Tensor(_base64ToArrayBuffer(input), 'float32', [1, 3, 244, 244])
+    const inferenceInputs = input_data;
     // execute the model
     myOnnxSession.run(inferenceInputs).then((output) => {
         // consume the output
