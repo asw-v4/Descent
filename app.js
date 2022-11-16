@@ -19,10 +19,10 @@ function updateInfo(content){
      = content ;
 }
 
-function predict(Input) {
+function predict(input) {
     // generate model input
     console.log("RunPrediction")
-    const inferenceInputs = Input;
+    const inferenceInputs = input;
     // execute the model
     myOnnxSession.run(inferenceInputs).then((output) => {
       // consume the output
