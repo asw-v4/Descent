@@ -5,12 +5,14 @@ function readURL(input) {
         reader.onload = function (e) {
             $('#uploaded')
                 .attr('src', e.target.result)
+
+            uploaded_file = e
         };
 
         reader.readAsDataURL(input.files[0]);
         updateInfo("Identifying...")
         document.getElementsByClassName('loader')[0].style.opacity = 1;
-        predict(input.files[0])
+        predict(uploaded_file)
     }
 }
 
@@ -21,7 +23,7 @@ function updateInfo(content){
 
 function predict(input) {
     // generate model input
-    console.log("RunPrediction")
+    console.log(input)
     const inferenceInputs = input;
     // execute the model
     myOnnxSession.run(inferenceInputs).then((output) => {
