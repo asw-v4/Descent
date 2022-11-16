@@ -6,7 +6,7 @@ function predict() {
     // generate model input
     console.log('Predicting')
     console.log(input)
-    const inferenceInputs = input;
+    const inferenceInputs = _base64ToArrayBuffer(input);
     // execute the model
     myOnnxSession.run(inferenceInputs).then((output) => {
         // consume the output
@@ -14,6 +14,16 @@ function predict() {
         console.log(`model output tensor: ${outputTensor.data}.`);
     });
 };
+
+function _base64ToArrayBuffer(base64) {
+    var binary_string = window.atob(base64);
+    var len = binary_string.length;
+    var bytes = new Uint8Array(len);
+    for (var i = 0; i < len; i++) {
+        bytes[i] = binary_string.charCodeAt(i);
+    }
+    return bytes.buffer;
+}
 
 function updateInfo(content) {
     document.getElementById('infodiv').innerHTML
