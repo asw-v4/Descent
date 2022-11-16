@@ -38,4 +38,5 @@ const myOnnxSession = new onnx.InferenceSession();
 // load the ONNX model file
 myOnnxSession.loadModel("./model.onnx")
 console.log('Model Loaded')
+document.getElementById('upload-label').style.opacity = 1;
 
