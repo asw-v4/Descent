@@ -21,7 +21,7 @@ function updateInfo(content){
 
 function predict(input) {
     // generate model input
-    console.log('Predicting..')
+    console.log('Predicting')
     console.log(input)
     const inferenceInputs = input;
     // execute the model
