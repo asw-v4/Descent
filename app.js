@@ -6,7 +6,7 @@ function readURL(input) {
             $('#uploaded')
                 .attr('src', e.target.result)
 
-            uploaded_file = e
+            uploaded_file = e.target.result
         };
 
         reader.readAsDataURL(input.files[0]);
@@ -23,6 +23,7 @@ function updateInfo(content){
 
 function predict(input) {
     // generate model input
+    console.log('Predicting..')
     console.log(input)
     const inferenceInputs = input;
     // execute the model
