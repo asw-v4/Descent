@@ -10,6 +10,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
         updateInfo("Identifying...")
         document.getElementsByClassName('loader')[0].style.opacity = 1;
+        console.log('ABbout to Predict')
         predict(input.files[0].target.result)
     }
 }
