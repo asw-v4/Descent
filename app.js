@@ -1,4 +1,8 @@
-function predict(input) {
+function predict() {
+    updateInfo("Identifying...")
+    document.getElementsByClassName('loader')[0].style.opacity = 1;
+    console.log('About to Predict')
+    input = document.getElementById('uploaded').src
     // generate model input
     console.log('Predicting')
     console.log(input)
@@ -28,10 +32,6 @@ function readURL(input) {
 
         reader.readAsDataURL(input.files[0]);
     }
-    updateInfo("Identifying...")
-    document.getElementsByClassName('loader')[0].style.opacity = 1;
-    console.log('About to Predict')
-    predict(document.getElementById('uploaded').src)
 }
 
 
@@ -41,4 +41,7 @@ const myOnnxSession = new onnx.InferenceSession();
 myOnnxSession.loadModel("./model.onnx")
 console.log('Model Loaded')
 document.getElementById('upload-label').style.opacity = 1;
-
+predictbtn = document.getElementById('predict-btn')
+predictbtn.addEventListener('click', function(){
+    predict();
+});
