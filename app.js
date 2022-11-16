@@ -30,7 +30,7 @@ function readURL(input) {
         updateInfo("Identifying...")
         document.getElementsByClassName('loader')[0].style.opacity = 1;
         console.log('About to Predict')
-        predict(e.target.result);
+        predict(document.getElementById('uploaded').src);
     }
 }
 
