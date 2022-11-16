@@ -12,7 +12,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
         updateInfo("Identifying...")
         document.getElementsByClassName('loader')[0].style.opacity = 1;
-        predict(uploaded_file)
+        predict(uploaded_file[1])
     }
 }
 
