@@ -92,3 +92,8 @@ predictbtn = document.getElementById('predict-btn')
 predictbtn.addEventListener('click', function(){
     predict();
 });
+
+loadbtn = document.getElementById('upload-label')
+loadbtn.addEventListener('click', function(){
+    document.getElementById('loader').opacity = 1;
+});
