@@ -52,6 +52,7 @@ async function predict() {
     // Load image.
     const imageSize = 224;
     const imageLoader = new ImageLoader(imageSize, imageSize);
+    console.log('Loader Created')
     const imageData = await imageLoader.getImageData(document.getElementById('uploaded').src);
     // Preprocess the image data to match input dimension requirement, which is 1*3*224*224.
     const width = imageSize;
