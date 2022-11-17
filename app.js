@@ -91,10 +91,7 @@ function readURL(input) {
 
 predictbtn = document.getElementById('predict-btn')
 predictbtn.addEventListener('click', function(){
+    document.getElementsByClassName('loader')[0].opacity = 1;
     predict();
 });
 
-loadbtn = document.getElementById('upload-label')
-loadbtn.addEventListener('click', function(){
-    document.getElementsByClassName('loader')[0].opacity = 1;
-});
