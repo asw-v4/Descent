@@ -50,9 +50,9 @@ async function predict() {
     await session.loadModel("./model.onnx");
     console.log('Model Loaded')
     // Load image.
+    const imageSize = 224;
     const imageLoader = new ImageLoader(imageSize, imageSize);
     const imageData = await imageLoader.getImageData(document.getElementById('uploaded').src);
-    const imageSize = 224;
     // Preprocess the image data to match input dimension requirement, which is 1*3*224*224.
     const width = imageSize;
     const height = imageSize;
