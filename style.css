@@ -23,7 +23,6 @@ label {
     bottom: 110px;
     left: calc(50% - 120px);
     /*mid - width - padding */
-    opacity: 0;
 }
 
 button {
