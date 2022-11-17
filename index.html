@@ -4,6 +4,8 @@
 <head>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <!-- Load ONNX.js -->
+    <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
     <meta charset=utf-8 />
     <title>Barracuda</title>
     <link rel="stylesheet" href="style.css">
@@ -13,14 +15,12 @@
     <input type="file" id="upload-btn" onchange="readURL(this);" hidden />
     <label id="upload-label" for="upload-btn">Upload 🐟</label>
 
-    <img id="uploaded" src="placeholder.png"/>
+    <img id="uploaded" src="placeholder.png" />
     <div id="infodiv" class="info"></div>
     </div>
     <div class="loader">🐬</div>
     <button id="predict-btn">Predict 🦈</button>
-    
-    <!-- Load ONNX.js -->
-    <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+
     <!-- Custom JS -->
     <script src="app.js"></script>
 </body>
