@@ -95,5 +95,5 @@ predictbtn.addEventListener('click', function(){
 
 loadbtn = document.getElementById('upload-label')
 loadbtn.addEventListener('click', function(){
-    document.getElementById('loader').opacity = 1;
+    document.getElementsByClassName('loader')[0].opacity = 1;
 });
